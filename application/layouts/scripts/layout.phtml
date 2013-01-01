@@ -1,0 +1,33 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+  <?php echo $this->headTitle() ?>
+  <?php echo $this->headLink() ?>
+  <?php echo $this->headStyle() ?>
+  <?php echo $this->headScript() ?>
+</head>
+<body>
+<div id="wrapper">
+  <div id="page">
+    <div id="header">
+      <h1>Tom Shaw</h1>
+      <p>Zend-Doctrine-Testing</p>
+    </div>
+    <div id="nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/hasone">Has One</a></li>
+        <li><a href="/hasmany">Has Many</a></li>
+        <li><a href="/manytomany">Many To Many</a></li>
+        <li><a href="http://github.com/tomshaw" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+    <div id="content"> 
+      <?php echo $this->layout()->content ?>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="footer">Powered by <a href="http://framework.zend.com" target="_blank">Zend Framework <?php echo Zend_Version::VERSION ?></a>, <a href="http://www.doctrine-project.org" target="_blank">Doctrine ORM <?php echo Doctrine::VERSION ?></a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?php
+#!/usr/bin/env /usr/bin/php
+
+# Execute via shell with "php ./doctrine"
+
+chdir(dirname(__FILE__));
+include('doctrine.php');

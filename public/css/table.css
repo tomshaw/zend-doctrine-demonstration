@@ -1,0 +1,53 @@
+/* Base tabular code. 
+*****************************************************/
+
+table.data-list {
+	background-color:#fff;
+	margin-top:1em;
+	border: 1px solid #d1b687;
+	width: 100%;
+}
+
+table.data-list caption {
+	padding: .5em .5em .5em .1em;
+	letter-spacing: .2em;
+	text-align: left;
+	text-transform: uppercase;
+	font-family: Cambria, Georgia, serif;
+	font-size: 2.0em;
+	font-weight: bold;
+	color: #342821;
+}
+
+table.data-list th {
+	background: #7c471f;
+	color: #fff;
+	padding: .3em .7em .3em .7em;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+table.data-list tbody td,table.data-list tbody th {
+	padding: .4em;
+}
+
+table.data-list tfoot td {
+	background-color: #7c471f;
+	color: #fff;
+	padding: .3em;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+table.data-list tr.row1 {
+	background-color: #f6dcb7;
+}
+
+table.data-list tr.row2 {
+	background-color: #bcb581;
+}
+
+table.data-list td {
+	padding: 0 10px;
+	font-size: 1.1em;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Zend Framework Default Application</title>
+</head>
+<body>
+
+  <?php if (isset($this->exception)): ?>
+  
+  <h3><?php echo $this->exception->getMessage() ?></h3>
+  
+  <p><b>Line:</b> <small>#<?php echo $this->exception->getLine() ?></small></p>
+  
+  <p><b>File:</b> <small><?php echo $this->exception->getFile() ?></small></p>
+
+  <h3>Stack trace:</h3>
+  <pre class="ylw"><code><?php echo $this->exception->getTraceAsString() ?></code></pre>
+
+  <h3>Request Parameters:</h3>
+  <pre class="ylw"><code><?php echo var_export($this->request->getParams(), true) ?></code></pre>
+  
+  <?php endif ?>
+
+</body>
+</html>

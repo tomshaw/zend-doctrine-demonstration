@@ -1,0 +1,26 @@
+Model_Comment:
+  Model_Comment_1:
+    User: Model_User_1
+    comment: 'This is my comment. Enjoy.'
+Model_Contact:
+  Model_Contact_1:
+    first_name: Tom
+    last_name: Shaw
+    phone: 214-555-5555
+    address: '1234 Rodeo Drive'
+Model_Group:
+  Model_Group_1:
+    name: Anonymous
+  Model_Group_2:
+    name: Member
+Model_User:
+  Model_User_1:
+    Contact: Model_Contact_1
+    email: tom@tomshaw.info
+    password: 5f4dcc3b5aa765d61d8327deb882cf99
+    created_at: '2012-12-31 20:53:01'
+    updated_at: '2012-12-31 20:53:01'
+Model_UserGroup:
+  Model_UserGroup_2_1:
+    Group: Model_Group_2
+    User: Model_User_1

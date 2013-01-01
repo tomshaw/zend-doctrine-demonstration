@@ -1,0 +1,145 @@
+---
+User:
+  connection: doctrine
+  tableName: user
+  actAs:
+    Timestampable:  ~
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    contact_id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    email:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    password:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    Contact:
+      local: contact_id
+      foreign: id
+      type: one
+      cascade: [delete]
+    Comment:
+      local: id
+      foreign: user_id
+      type: many
+      cascade: [delete]
+    Group: 
+      local: user_id 
+      foreign: group_id 
+      refClass: UserGroup
+      foreignAlias: Users 
+Contact:
+  connection: doctrine
+  tableName: contact
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    first_name:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    last_name:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    phone:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    address:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+  relations:
+    User:
+      local: id
+      foreign: contact_id
+      type: many
+Comment:
+  connection: doctrine
+  tableName: comment
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:
+      type: integer(4)
+    comment:
+      type: string(255)
+  relations:
+    User:
+      foreignAlias: Comment
+Group:
+  tableName: groups
+  columns:
+    id:
+      type: integer(4)
+      autoincrement: true
+      primary: true
+    name:
+      type: string(255)
+  relations:
+    User: 
+      local: group_id 
+      foreign: user_id
+      refClass: UserGroup
+      foreignAlias: Groups 
+UserGroup:
+  tableName: user_group
+  columns:
+    group_id:
+      type: integer(4)
+      primary: true
+    user_id:
+      type: integer(4)
+      primary: true
+  relations: 
+    User: 
+      class: User 
+      local: user_id 
+      foreign: id 
+      foreignAlias: UserGroups 
+      onDelete: CASCADE 
+    Group: 
+      class: Group 
+      local: group_id 
+      foreign: id 
+      foreignAlias: UserGroups 
+      onDelete: CASCADE 

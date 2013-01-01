@@ -1,0 +1,42 @@
+<?php $this->headLink()->appendStylesheet('/css/table.css'); ?>
+<h2>Has One Contact</h2>
+<p>This controller shows the one to one relationship between the user and the contact information table. We can also cascade delete any comments, contact information and user group data.</p>
+<form id="add-user" method="get" action="/hasone/add">
+  <input type="submit" value="Add User" name="submit" />
+</form>
+<form id="form" method="get" action="/hasone/edit">
+<?php echo $this->formHidden('id') ?>
+<table class="data-list" summary="Data Listing">
+  <!--<caption>One to One Relations</caption>-->
+  <thead>
+    <tr>
+      <th scope="col" width="5%" align="center">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Created</th>
+      <th scope="col">Updated</th>
+      <th scope="col" align="center">Delete</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="4" align="right">Total:</td>
+      <td colspan="2"><?php echo $this->total ?></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <?php foreach($this->rows as $row): ?>
+    <?php $colour = $this->cycle(array("row1","row2"))->next(); ?>
+    <tr class="<?php echo $colour ?>" onMouseOver="this.bgColor='#c6bebe';" onMouseOut="this.bgColor='<?php echo $colour ?>';">
+      <td style="text-align: center;"><?php echo $this->formSubmit('submit', 'Edit', array('onclick' => "this.form.id.value='{$row->id}'", "class" => "button", "title" => 'Edit')) ?></td>
+      <td><a href="/hasone/edit/id/<?php echo $row->id ?>"><?php echo $row->email ?></a> [<?php echo $row->email ?>]</td>
+      <td><?php echo $row->Contact->address ?></td>
+      <td><?php echo $row->created_at ?></td>
+      <td><?php echo $row->updated_at ?></td>
+      <td align="center"><a href="/hasone/delete/id/<?php echo $row->id ?>">[Del]</a></td>
+    </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+</form>
+<?=$this->paginationControl($this->rows, 'Elastic', 'pager.phtml');?>
