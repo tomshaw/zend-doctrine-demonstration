@@ -1,6 +1,6 @@
 # Introduction
 
-The zf1-doctrine application is a simple project I created to learn how to incorporate and use the Doctrine ORM in a Zend Framework, Zend Tool created application. The application demonstrates some of Doctrines most basic concepts including, creating successful YAML schema files, and one-to-one, one-to-many, and many-to-many CRUD operations
+This is a simple project developed to learn how to incorporate Doctrine ORM in a Zend Framework, Zend Tool created application. The application demonstrates some of Doctrines most basic concepts including, creating successful YAML schema files, and one-to-one, one-to-many, and many-to-many CRUD operations.
 
 Some of the immediate goals of the application besides learning how to use Doctrine, were to ensure that Doctrine result sets could be easily manipulated with Zend Form and Zend Paginator, stuff that you would use in any other daily work flow. 
 
