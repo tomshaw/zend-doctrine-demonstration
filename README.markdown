@@ -1,12 +1,12 @@
 # Introduction
 
-This is a simple project developed to learn how to incorporate Doctrine ORM in a Zend Framework, Zend Tool created application. The application demonstrates some of Doctrines most basic concepts including, creating successful YAML schema files, and one-to-one, one-to-many, and many-to-many CRUD operations.
+This is a simple project developed to learn how to incorporate Doctrine ORM into a Zend Framework, Zend Tool created application. The application demonstrates some of Doctrines most basic concepts including, creating successful YAML schema files, and one-to-one, one-to-many, and many-to-many CRUD operations.
 
-Some of the immediate goals of the application besides learning how to use Doctrine, were to ensure that Doctrine result sets could be easily manipulated with Zend Form and Zend Paginator, stuff that you would use in any other daily work flow. 
+Immediate goals of the application besides learning how to use Doctrine, were to ensure that result sets could be easily manipulated with Zend Form, Zend Paginator, modules that you would typically interact with in your daily work flow.  
 
 # Requirements
 
-This application was developed and or tested using [PHP 5.4](http://www.php.net), [Zend Framework 1.11.11](http://framework.zend.com) and an older version of [Doctrine 1.2.0](http://www.doctrine-project.org/). 
+This application was developed and tested using [PHP 5.4](http://www.php.net), [Zend Framework 1.11.11](http://framework.zend.com) and an [Doctrine 1.2.0](http://www.doctrine-project.org/). 
 
 # Deploying
 
